@@ -19,10 +19,18 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-				<section>
-					<h1>Строковые методы и функции</h1>
-					<img alt="https://ktkv-presentations.github.io/algos-7/" data-type="qrcode">
-				</section>
+			<section>
+				<h1>Строковые методы и функции</h1>
+				<img class="r-stretch" alt="https://ktkv-presentations.github.io/algos-7/" data-type="qrcode">
+			</section>
+			<section>
+				<h1>Встроенные методы и функции</h1>
+				  <iframe data-src="https://docs.python.org/3/library/stdtypes.html" class="r-stretch"></iframe>
+			</section>
+			<section>
+				<h1>Встроенные методы и функции</h1>
+				<img class="r-stretch" alt="https://docs.python.org/3/library/stdtypes.html" data-type="qrcode">
+			</section>
 			<section>
 				<section>
 					<h1>Индексация строк</h1>
@@ -47,6 +55,217 @@ print(s[2:6])  # thon
 print(s[:3])   # Pyt
 print(s[2:])   # thon
 					</code></pre>
+				</section>
+				<section>
+					<h1>Длина строки</h1>
+					<pre><code class="python" data-trim data-noescape>
+s = "Python"
+len(s) # 6
+					</code></pre>
+				</section>
+				<section>
+					<h1>Методы изменения строк</h1>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="border-b">
+							<code class="python">lower()</code>
+							<p>преобразовывает строку в нижний регистр</p>
+						</div>
+						<div class="border-b">
+							<code class="python">upper()</code>
+							<p>преобразовывает строку в верхний регистр</p>
+						</div>
+					</div>
+					<pre><code class="python" data-trim data-noescape>
+s = "Python"
+print(s.lower())  # python
+print(s.upper())  # PYTHON
+					</code></pre>
+				</section>
+				<section>
+					<h1>Методы изменения строк</h1>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="border-b">
+							<code class="python">capitalize()</code>
+							<p>делает первую букву строки заглавной</p>
+						</div>
+						<div class="border-b">
+							<code class="python">title()</code>
+							<p>делает заглавными первые буквы каждого слова</p>
+						</div>
+					</div>
+					<pre><code class="python" data-trim data-noescape>
+s = "hello world"
+print(s.capitalize())  # Hello world
+print(s.title())       # Hello World
+					</code></pre>
+				</section>
+				<section>
+					<h1>Методы изменения строк</h1>
+					<div class="border-b">
+						<code class="python">swapcase()</code>
+						<p>меняет регистр символов строки на противоположный</p>
+					</div>
+					<pre><code class="python" data-trim data-noescape>
+s = "PyThOn"
+print(s.swapcase())  # pYtHoN
+					</code></pre>
+				</section>
+				<section>
+					<h1>Работа с числовым кодом</h1>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="border-b">
+							<code class="python">ord()</code>
+							<p>возвращает числовой код символа (его позицию в таблице Unicode).</p>
+						</div>
+						<div class="border-b">
+							<code class="python">chr()</code>
+							<p>возвращает символ по его числовому коду</p>
+						</div>
+					</div>
+					<pre><code class="python" data-trim data-noescape>
+print(ord('A'))  # 65
+print(chr(65))   # 'A'
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Методы для работы с содержимым строк</h1>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="border-b">
+							<code class="python">startswith()</code>
+							<p>проверяет начинается ли строка с указанной подстроки</p>
+						</div>
+						<div class="border-b">
+							<code class="python">endswith()</code>
+							<p>проверяет заканчивается ли строка с указанной подстроки</p>
+						</div>
+					</div>
+					<pre><code class="python" data-trim data-noescape>
+s = "Python programming"
+print(s.startswith("Py"))  # True
+print(s.endswith("ing"))   # True
+					</code></pre>
+				</section>
+				<section>
+					<h1>Поиск по строке</h1>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="border-b">
+							<code class="python">find()</code>
+							<p>возвращает индекс первого вхождения подстроки или <code class="python">-1</code>, если подстрока не
+								найдена</p>
+						</div>
+						<div class="border-b">
+							<code class="python">rfind()</code>
+							<p>возвращает индекс последнего вхождения подстроки или <code class="python">-1</code>, если подстрока не
+								найдена</p>
+						</div>
+						<div class="border-b">
+							<code class="python">index()</code>
+							<p>работает так же как и find, но вызывает ошибку <code class="python">ValueError</code>, если подстрока не найдена
+							</p>
+						</div>
+						<div class="border-b">
+							<code class="python">rindex()</code>
+							<p>работает так же как и rfind, но вызывает ошибку <code class="python">ValueError</code>, если подстрока не найдена
+						</div>
+					</div>
+					<pre><code class="python" data-trim data-noescape>
+s = "Python programming"
+print(s.find("pro"))    # 7
+print(s.find("xyz"))    # -1
+print(s.index("pro"))   # 7
+					</code></pre>
+				</section>
+				<section>
+					<h1>Счет по строке</h1>
+					<div class="border-b">
+						<code class="python">count()</code>
+						<p>возвращает количество вхождений подстроки в строке</p>
+					</div>
+					<pre><code class="python" data-trim data-noescape>
+s = "banana"
+print(s.count("a"))  # 3
+					</code></pre>
+				</section>
+				<section>
+					<h1>Замена в строке</h1>
+					<div class="border-b">
+						<code class="python">replace()</code>
+						<p>заменяет все вхождения одной подстроки на другую</p>
+					</div>
+				</section>
+				<section>
+					<h1>Методы проверки содержимого строки</h1>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="border-b">
+							<code class="python">isalpha()</code>
+							<p>возвращает <code class="python">True</code>, если все символы в строке являются буквами</p>
+						</div>
+						<div class="border-b">
+							<code class="python">isdigit()</code>
+							<p>возвращает <code class="python">True</code>, если строка состоит только из цифр</p>
+						</div>
+						<div class="border-b">
+							<code class="python">isalnum()</code>
+							<p>возвращает <code class="python">True</code>, если строка содержит только буквы и цифры</p>
+						</div>
+						<div class="border-b">
+							<code class="python">isspace()</code>
+							<p>возвращает <code class="python">True</code>, если строка состоит только из пробельных символов
+								(например, пробел, табуляция)</p>
+						</div>
+						<div class="border-b">
+							<code class="python">islower()</code>
+							<p>возвращает <code class="python">True</code>, если строка состоит только из символов нижнего регистра
+							</p>
+						</div>
+						<div class="border-b">
+							<code class="python">isupper()</code>
+							<p>возвращает <code class="python">True</code>, если строка состоит только из символов верхнего регистра
+							</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h1>Методы работы с пробелами</h1>
+					<div class="grid grid-cols-3 gap-4">
+						<div class="border-b">
+							<code class="python">strip()</code>
+							<p>удаляет пробелы с обоих концов строки</p>
+						</div>
+						<div class="border-b">
+							<code class="python">lstrip()</code>
+							<p>удаляет пробелы только слева</p>
+						</div>
+						<div class="border-b">
+							<code class="python">rstrip()</code>
+							<p>удаляет пробелы только справа</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h1>Методы разделение и соединения строк</h1>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="border-b">
+							<code class="python">split()</code>
+							<p>разбивает строку на подстроки по указанному разделителю и возвращает список</p>
+						</div>
+						<div class="border-b"><code class="python">join()</code>
+							<p>объединяет список строк в одну строку с указанным разделителем</p>
+						</div>
+					</div>
+					<pre><code class="python" data-trim data-noescape>
+s = "Python is fun"
+words = s.split()
+print(words)           # ['Python', 'is', 'fun']
+print(words.join("-")) # "Python-is-fun"
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1></h1>
 				</section>
 			</section>
 		</div>
